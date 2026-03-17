@@ -72,53 +72,6 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-        /* ... 既存のスタイル ... */
-
-    /* 副題の前後に装飾を追加するスタイル */
-    .subtitle-with-decoration {
-        position: relative; /* 擬似要素の位置調整のため */
-        padding-left: 2.5rem; /* 左側の装飾分の余白 */
-        padding-right: 2.5rem; /* 右側の装飾分の余白 */
-        display: inline-flex; /* 擬似要素との位置調整のため */
-        align-items: center; /* 擬似要素との中央揃え */
-    }
-
-    /* 左右の装飾に共通のスタイル */
-    .subtitle-with-decoration::before,
-    .subtitle-with-decoration::after {
-        content: ''; /* テキストは空 */
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%); /* 垂直方向の中央揃え */
-        height: 1px; /* ダッシュの太さ */
-        background-color: currentColor; /* 文字と同じ色（ゴールド） */
-    }
-
-    /* 左側の装飾（副題から左へ） */
-    .subtitle-with-decoration::before {
-        left: 0.5rem; /* 位置を調整 */
-        width: 1.5rem; /* 長さを調整 */
-    }
-    /* 矢印の頭を作成 */
-    .subtitle-with-decoration::before {
-        border-left: 6px solid currentColor; /* 文字と同じ色 */
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        left: -0.1rem; /* 位置を調整 */
-    }
-
-    /* 右側の装飾（副題から右へ） */
-    .subtitle-with-decoration::after {
-        right: 0.5rem; /* 位置を調整 */
-        width: 1.5rem; /* 長さを調整 */
-    }
-    /* 矢印の頭を作成 */
-    .subtitle-with-decoration::after {
-        border-right: 6px solid currentColor; /* 文字と同じ色 */
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        right: -0.1rem; /* 位置を調整 */
-    }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-900 font-sans leading-relaxed">
@@ -178,13 +131,7 @@
                         次期学習指導要領を<br class="hidden md:block">どうする!?
                     </h1>
                     <p class="text-cream text-2xl md:text-3xl font-normal tracking-wider font-reggae mt-4 title-glow">
-                        <span class="font-reggae text-xs md:text-sm text-accent-gold leading-tight tracking-tight -mt-1 opacity-90">
-    ー 外国語教育の視点から ー
-</span>
-
-<span class="subtitle-with-decoration font-reggae text-xs md:text-sm text-accent-gold leading-tight tracking-tight -mt-1 opacity-90">
-    外国語教育の視点から
-</span>
+                        <span class="opacity-80">---</span> 外国語教育の視点から <span class="opacity-80">---</span>
                     </p>
                 </div>
                 <div class="w-full max-w-4xl mx-auto mb-10 px-0 md:px-4 animate-fade-in-up" style="animation-delay: 0.1s;">
