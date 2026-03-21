@@ -47,20 +47,12 @@
     </script>
     <style>
         .glass-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         .text-glow {
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: #D4AF37;
-            margin-top: 10px;
         }
         .title-glow {
             filter: drop-shadow(0 0 8px rgba(253, 253, 208, 0.6));
@@ -78,8 +70,8 @@
 
     <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex flex-col items-start justify-center h-full py-1">
+            <div class="flex justify-center items-center h-20">
+                <div class="flex-shrink-0 flex flex-col items-center justify-center h-full py-1 text-center">
                     <span class="font-sans text-[10px] md:text-xs font-bold tracking-widest text-navy-900 mb-1">
                         【公開シンポジウム】
                     </span>
@@ -87,42 +79,18 @@
                         次期学習指導要領をどうする!?
                     </span>
                     <span class="font-reggae text-xs md:text-sm text-accent-gold leading-tight tracking-tight -mt-1 opacity-90">
-    <span class="inline-block -scale-x-100">---</span> 外国語教育の視点から ---
-</span>
-                </div>
-                
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#intro" class="text-base font-bold hover:text-navy-800 transition-colors">開催趣旨</a>
-                    <a href="#program" class="text-base font-bold hover:text-navy-800 transition-colors">プログラム</a>
-                    <a href="#access" class="text-base font-bold hover:text-navy-800 transition-colors">アクセス</a>
-                    <a href="#register" class="bg-navy-900 text-white px-6 py-2.5 rounded-full text-base font-black hover:bg-navy-800 transition-all shadow-lg hover:shadow-navy-900/20 active:scale-95">
-                        参加申し込み
-                    </a>
-                </div>
-
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-navy-900 p-2">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+                        <span class="inline-block -scale-x-100">---</span> 外国語教育の視点から ---
+                    </span>
                 </div>
             </div>
         </nav>
-        
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-2 shadow-xl text-center">
-            <a href="#intro" class="block px-3 py-2 text-lg font-medium text-gray-700">開催趣旨</a>
-            <a href="#program" class="block px-3 py-2 text-lg font-medium text-gray-700">プログラム</a>
-            <a href="#access" class="block px-3 py-2 text-lg font-medium text-gray-700">アクセス</a>
-            <a href="#register" class="block px-3 py-4 text-center font-bold text-white bg-navy-900 rounded-xl mx-4 mt-2">参加申し込み</a>
-        </div>
     </header>
 
     <main>
-        <section class="relative min-h-screen flex items-start justify-center pt-32 md:pt-40 pb-20 overflow-hidden">
+        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden">
             <div class="absolute inset-0 hero-background z-0"></div>
             
-            <div class="relative z-10 w-full max-w-5xl mx-auto px-4 text-center">
+            <div class="relative z-10 w-full max-w-5xl mx-auto px-4 text-center mt-10">
                 <div class="flex flex-col items-center gap-2 mb-10 animate-fade-in-up">
                     <p class="text-white text-xl md:text-2xl font-bold tracking-widest font-sans mb-3">
                         【公開シンポジウム】
@@ -131,273 +99,28 @@
                         次期学習指導要領を<br class="hidden md:block">どうする!?
                     </h1>
                     <p class="text-cream text-2xl md:text-3xl font-normal tracking-wider font-reggae mt-4 title-glow">
-    <span class="inline-block -scale-x-100 opacity-80">---</span> 外国語教育の視点から <span class="opacity-80">---</span>
-</p>
-                </div>
-                <div class="w-full max-w-4xl mx-auto mb-10 px-0 md:px-4 animate-fade-in-up" style="animation-delay: 0.1s;">
-    <img src="https://flcssymposium.github.io/photos.png" alt="登壇者やイメージ写真" class="w-full h-auto drop-shadow-2xl mx-auto">
-</div>
-                <div class="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="glass-card px-8 py-4 rounded-2xl text-left border-l-4 border-accent-gold shadow-2xl">
-                        <p class="text-navy-900 text-xs font-bold uppercase tracking-wider mb-1">日時</p>
-                        <p class="text-navy-900 font-bold text-xl">2026年8月8日(土)</p>
-                        <p class="text-navy-800 text-sm">13:00-16:30 （開場12:30）</p>
-                    </div>
-                    <div class="glass-card px-8 py-4 rounded-2xl text-left border-l-4 border-accent-sky shadow-2xl">
-                        <p class="text-navy-900 text-xs font-bold uppercase tracking-wider mb-1">会場</p>
-                        <p class="text-navy-900 font-bold text-xl">関西大学東京センター A・B教室</p>
-                        <p class="text-navy-800 text-sm">ハイブリッド開催 (対面＋Zoom)</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <a href="#register" class="w-full sm:w-auto px-10 py-5 bg-white text-navy-900 font-black rounded-full hover:scale-105 transition-all shadow-xl text-lg">
-                        参加申し込み (無料)
-                    </a>
-                    <a href="#program" class="w-full sm:w-auto px-10 py-5 bg-navy-900/40 backdrop-blur border border-white/20 text-white font-bold rounded-full hover:bg-navy-900/60 transition-all text-lg">
-                        プログラムを見る
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-12 bg-white">
-            <div class="max-w-4xl mx-auto px-4">
-                <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-bold">NEWS</span>
-                    <div class="flex-1 overflow-hidden">
-                        <p class="text-sm text-gray-600 truncate">2026.◯.◯ | 申し込み受付を開始しました。会場◯◯名、オンライン◯◯◯名（先着順）となります。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="intro" class="py-24 relative">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="section-title text-3xl font-black text-navy-900 mb-12">開催趣旨</h2>
-                <div class="bg-white p-10 md:p-16 rounded-[40px] shadow-sm border border-gray-100 relative overflow-hidden text-center md:text-left">
-                    <div class="absolute top-0 right-0 p-12 opacity-5">
-                        <svg width="200" height="200" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="1" fill="none"/>
-                            <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" stroke-width="0.5"/>
-                        </svg>
-                    </div>
-                    <p class="font-serif text-lg leading-relaxed text-gray-700 space-y-6 mb-8">
-                        （要調整）学習指導要領の改訂にあたって考慮すべき視点と論点を示し、改訂当事者、教育関係者、一般市民に考えるヒントを提供する。
-                    </p>
-                    <p class="font-serif text-lg leading-relaxed text-gray-700 mb-8">
-                        （要調整）学習指導要領の改訂にあたって考慮すべき視点と論点を示し、改訂当事者、教育関係者、一般市民に考えるヒントを提供する。
-                    </p>
-                    <p class="font-bold text-navy-900 border-l-4 border-accent-gold pl-6 py-2">
-                        （要調整）学習指導要領の改訂にあたって考慮すべき視点と論点を示し、改訂当事者、教育関係者、一般市民に考えるヒントを提供する。
+                        <span class="inline-block -scale-x-100 opacity-80">---</span> 外国語教育の視点から <span class="opacity-80">---</span>
                     </p>
                 </div>
-            </div>
-        </section>
-
-        <section id="program" class="py-24 bg-navy-900 text-white overflow-hidden relative">
-            <div class="max-w-5xl mx-auto px-4 relative z-10">
-                <h2 class="section-title text-3xl font-black mb-16">プログラム</h2>
                 
-                <div class="space-y-4">
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:00–13:05</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold">開会</h3>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:05–13:25</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">江利川 春雄 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（和歌山大学名誉教授）</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:25–13:55</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">大西 里奈 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（大阪大学(非)）</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:55–14:25</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">上野 舞斗 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（四天王寺大学）</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:25–14:40</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold">休憩</h3>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:40–14:55</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">大津 由紀雄 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（慶應義塾大学名誉教授）</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:55–15:10</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">斎藤 兆史 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（東京大学名誉教授）</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">15:10–15:25</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">鳥飼 玖美子 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（立教大学名誉教授）</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">15:25–16:25</div>
-                        <div class="flex-1 pt-1">
-                            <h3 class="text-xl font-bold">全体討議</h3>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">16:25–16:30</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold">閉会</h3>
-                        </div>
-                    </div>
+                <div class="w-full max-w-4xl mx-auto mb-12 px-0 md:px-4 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <img src="https://flcssymposium.github.io/photos_pre.png" alt="登壇者やイメージ写真" class="w-full h-auto drop-shadow-2xl mx-auto">
                 </div>
-            </div>
-            <div class="absolute -bottom-24 -right-24 w-64 h-64 border-2 border-white/10 rounded-full"></div>
-        </section>
-
-        <section id="register" class="py-24 bg-gray-50 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto px-4 relative z-10">
-                <div class="bg-white rounded-[40px] p-8 md:p-16 shadow-xl text-center transform hover:-translate-y-2 transition-transform duration-500 border border-gray-100">
-                    <h2 class="text-3xl md:text-5xl font-black text-navy-900 mb-6">参加申し込み</h2>
-                    <p class="text-gray-600 mb-10 max-w-lg mx-auto leading-relaxed">
-                        本シンポジウムは事前登録制です。対面・オンラインいずれの参加希望者も下記のボタンよりお申し込みください。
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                        <div class="p-6 border border-gray-100 rounded-3xl bg-gray-50">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">参加費</p>
-                            <p class="text-2xl font-black text-navy-900">無料</p>
-                            <p class="text-[10px] text-gray-500 mt-2 font-bold">※要事前申し込み</p>
-                        </div>
-                        <div class="p-6 border border-gray-100 rounded-3xl bg-gray-50">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">定員</p>
-                            <p class="text-2xl font-black text-navy-900">対面◯◯名</p>
-                            <p class="text-[10px] text-gray-500 mt-2 font-bold">オンライン◯◯◯名</p>
-                        </div>
-                        <div class="p-6 border border-gray-100 rounded-3xl bg-gray-50">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">締め切り</p>
-                            <p class="text-2xl font-black text-navy-900">◯月◯日(◯)</p>
-                            <p class="text-[10px] text-gray-500 mt-2 font-bold">※定員に達し次第締め切り</p>
-                        </div>
-                    </div>
-
-                    <a href="https://forms.gle/7kksxbhJhoJjmbMC9" target="_blank" class="inline-block w-full md:w-auto px-16 py-6 bg-navy-900 text-white rounded-full font-black text-xl shadow-2xl hover:bg-navy-800 transition-all hover:scale-105 active:scale-95">
-                        申し込みフォームを開く
-                    </a>
-                    
-                    <div class="mt-8 flex justify-center gap-6">
-                        <button class="flex items-center gap-2 text-sm text-gray-500 hover:text-navy-900 transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/></svg>
-                            フライヤー(PDF)
-                        </button>
-                        <button class="flex items-center gap-2 text-sm text-gray-500 hover:text-navy-900 transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/></svg>
-                            リーフレット(PDF)
-                        </button>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="glass-card px-12 py-8 rounded-3xl text-center shadow-2xl border-b-4 border-accent-gold">
+                        <p class="text-navy-900 font-black text-3xl md:text-5xl tracking-widest">近日公開!!</p>
+                        <p class="text-navy-800 font-bold text-xl md:text-2xl mt-4 tracking-wider">乞うご期待</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="access" class="py-24 bg-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="flex flex-col lg:flex-row gap-12 items-center">
-                    <div class="lg:w-1/2 text-left">
-                        <h2 class="section-title text-3xl font-black text-navy-900 mb-8">会場案内・アクセス</h2>
-                        <div class="space-y-6 text-left">
-                            <div>
-                                <h4 class="font-bold text-lg text-navy-800 mb-2">関西大学東京センター A・B教室</h4>
-                                <p class="text-gray-600">東京都千代田区丸の内1-7-12 サピアタワー9階</p>
-                                <p class="text-sm text-gray-500 mt-2 font-bold">※サピアタワー3階のオフィスロビー総合受付で入館手続きを行ったうえで、9階にお上がりください。</p>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-gray-50 p-4 rounded-xl">
-                                    <p class="font-bold text-sm mb-1">JR 東京駅</p>
-                                    <p class="text-xs text-gray-500 font-medium">日本橋口隣接（徒歩1分）</p>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-xl">
-                                    <p class="font-bold text-sm mb-1">東京メトロ 大手町駅</p>
-                                    <p class="text-xs text-gray-500 font-medium">B7出口直結</p>
-                                </div>
-                            </div>
-                            <div class="p-4 border border-accent-gold/30 bg-accent-gold/5 rounded-xl">
-                                <p class="text-xs font-bold text-accent-gold uppercase mb-1">Online participation</p>
-                                <p class="text-sm text-gray-700">オンライン参加の方には、開催前日にZoomウェビナーのURLをメールにて送付いたします。</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2 w-full h-[450px] bg-gray-200 rounded-[40px] shadow-2xl overflow-hidden relative border-8 border-white">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.727233389806!2d139.7660363757383!3d35.6837177725864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfec5da0093%3A0x572db3d6516f0936!2z6Zai6KW_5aSn5a2mIOadseS6rOOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1773719724897!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <aside class="bg-navy-900 text-white py-20 px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="text-left">
-                <h4 class="text-white font-bold mb-6 flex items-center gap-2">
-                    <span class="w-8 h-1 bg-accent-gold"></span>
-                    
-                </h4>
-                <p class="text-lg text-white font-medium mb-6">
-                    主催｜JSPS科研費 挑戦的研究（萌芽）24K21365　代表：大津由紀雄<br>
-                    後援｜一般社団法人ことばの教育
-                </p>
-                <p class="text-sm opacity-80">事務局：◯◯◯◯◯◯◯◯内</p>
-                <p class="text-sm mt-4 opacity-80 hover:opacity-100 transition-opacity">お問い合わせ: <a href="mailto:xxxxx@xxxxxx.jp" class="underline">Email:xxxxx@xxxxxx.jp</a></p>
-            </div>
-            <div class="flex flex-col md:items-end justify-center">
-                <div class="flex gap-4">
-                    <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all text-white/60">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.56a9.83 9.83 0 01-2.83.77 4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.93 4.93 0 00-8.4 4.48A14 14 0 011.64 3.16a4.93 4.93 0 001.53 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.92 4.92 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.89 9.89 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14-7.5 14-14v-.64A10 10 0 0024 4.56z"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
+    <aside class="bg-navy-900 py-12">
+        </aside>
 
     <script>
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -406,7 +129,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('section h2, .glass-card, .bg-white.rounded-3xl').forEach(el => {
+        document.querySelectorAll('.animate-fade-in-up').forEach(el => {
             observer.observe(el);
         });
     </script>
