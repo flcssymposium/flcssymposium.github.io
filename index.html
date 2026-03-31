@@ -91,13 +91,13 @@
             border-bottom-color: #D4AF37;
         }
 
-        /* ツールチップ本体 */
+        /* ツールチップ本体（右側に表示されるよう変更） */
         .abstract-tooltip {
             position: absolute;
-            left: 0;
-            bottom: calc(100% + 16px);
-            width: 460px;
-            max-width: 88vw;
+            left: 350px; /* ★名前の右側の余白に配置 */
+            top: 50%;    /* ★要素の上下中央に基準を置く */
+            width: 480px;
+            max-width: calc(100% - 370px); /* ★画面の右端からはみ出ないように幅を自動調整 */
             background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(212, 175, 55, 0.35);
@@ -113,22 +113,23 @@
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transform: translateY(8px);
+            transform: translateY(-50%) translateX(10px); /* ★少し右からスライドインさせるアニメーション */
             transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
         }
 
-        /* 下向き三角（吹き出しの尻尾） */
+        /* 左向き三角（吹き出しの尻尾） */
         .abstract-tooltip::after {
             content: '';
             position: absolute;
-            bottom: -8px;
-            left: 36px;
+            top: 50%;      /* ★吹き出しの上下中央 */
+            left: -8px;    /* ★左側に飛び出させる */
             width: 14px;
             height: 14px;
             background: rgba(255, 255, 255, 0.97);
-            border-right: 1px solid rgba(212, 175, 55, 0.35);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-            transform: rotate(45deg);
+            border-left: 1px solid rgba(212, 175, 55, 0.35);   /* ★左下の枠線を残す */
+            border-bottom: 1px solid rgba(212, 175, 55, 0.35); /* ★左下の枠線を残す */
+            border-right: none;
+            transform: translateY(-50%) rotate(45deg); /* ★45度回転させて左向きの矢印（尻尾）にする */
         }
 
         /* ホバー時に表示 */
@@ -136,7 +137,7 @@
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transform: translateY(0);
+            transform: translateY(-50%) translateX(0); /* ★定位置へスライド */
         }
 
         /* ツールチップ内ラベル */
@@ -160,20 +161,21 @@
             text-align: justify;
         }
 
-        /* モバイル調整: 小さい画面ではツールチップを下に表示 */
+        /* モバイル調整: 小さい画面ではツールチップを画面中央に表示 */
         @media (max-width: 640px) {
             .abstract-tooltip {
                 position: fixed;
                 left: 50% !important;
                 bottom: auto !important;
                 top: 50%;
-                transform: translate(-50%, -50%) scale(0.96);
+                transform: translate(-50%, -50%) scale(0.96) !important;
                 width: 90vw;
+                max-width: 90vw !important;
                 max-height: 70vh;
                 overflow-y: auto;
             }
             .has-abstract:hover .abstract-tooltip {
-                transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%) scale(1) !important;
             }
             .abstract-tooltip::after {
                 display: none;
@@ -304,7 +306,6 @@
                         </div>
                     </div>
  
-                    <!-- 江利川氏 -->
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:05–13:25</div>
                         <div class="flex-1">
@@ -317,7 +318,6 @@
                         </div>
                     </div>
  
-                    <!-- 大西氏 -->
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:25–13:55</div>
                         <div class="flex-1">
@@ -330,7 +330,6 @@
                         </div>
                     </div>
  
-                    <!-- 上野氏 -->
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:55–14:25</div>
                         <div class="flex-1">
@@ -350,7 +349,6 @@
                         </div>
                     </div>
  
-                    <!-- 大津氏 -->
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:40–14:55</div>
                         <div class="flex-1">
@@ -363,7 +361,6 @@
                         </div>
                     </div>
  
-                    <!-- 斎藤氏 -->
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:55–15:10</div>
                         <div class="flex-1">
@@ -376,7 +373,6 @@
                         </div>
                     </div>
  
-                    <!-- 鳥飼氏 -->
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">15:10–15:25</div>
                         <div class="flex-1">
