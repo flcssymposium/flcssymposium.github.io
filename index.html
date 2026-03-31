@@ -72,6 +72,113 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        /* ============================================
+           ホバーツールチップ（要旨ボックス）
+           ============================================ */
+        .has-abstract {
+            position: relative;
+            cursor: default;
+        }
+
+        /* 名前に下線ヒントを追加 */
+        .has-abstract .abstract-trigger {
+            border-bottom: 1.5px dashed rgba(212, 175, 55, 0.6);
+            padding-bottom: 1px;
+            transition: border-color 0.2s ease;
+        }
+        .has-abstract:hover .abstract-trigger {
+            border-bottom-color: #D4AF37;
+        }
+
+        /* ツールチップ本体 */
+        .abstract-tooltip {
+            position: absolute;
+            left: 0;
+            bottom: calc(100% + 16px);
+            width: 460px;
+            max-width: 88vw;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 16px;
+            box-shadow:
+                0 12px 40px rgba(0, 0, 0, 0.35),
+                0 4px 12px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            padding: 22px 24px;
+            z-index: 200;
+
+            /* 非表示状態 */
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        }
+
+        /* 下向き三角（吹き出しの尻尾） */
+        .abstract-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 36px;
+            width: 14px;
+            height: 14px;
+            background: rgba(255, 255, 255, 0.97);
+            border-right: 1px solid rgba(212, 175, 55, 0.35);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+            transform: rotate(45deg);
+        }
+
+        /* ホバー時に表示 */
+        .has-abstract:hover .abstract-tooltip {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        /* ツールチップ内ラベル */
+        .tooltip-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            color: #002060;
+            background: rgba(0, 32, 96, 0.07);
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        /* ツールチップ内テキスト */
+        .tooltip-text {
+            font-size: 0.86rem;
+            line-height: 1.85;
+            color: #2c2c2c;
+            text-align: justify;
+        }
+
+        /* モバイル調整: 小さい画面ではツールチップを下に表示 */
+        @media (max-width: 640px) {
+            .abstract-tooltip {
+                position: fixed;
+                left: 50% !important;
+                bottom: auto !important;
+                top: 50%;
+                transform: translate(-50%, -50%) scale(0.96);
+                width: 90vw;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+            .has-abstract:hover .abstract-tooltip {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            .abstract-tooltip::after {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-900 font-sans leading-relaxed">
@@ -208,27 +315,42 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
+                    <!-- 江利川氏 -->
+                    <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:05–13:25</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">江利川 春雄 氏</h3>
+                            <h3 class="text-xl font-bold mb-2"><span class="abstract-trigger">江利川 春雄 氏</span></h3>
                             <p class="text-gray-300 pl-[1em]">（和歌山大学名誉教授）</p>
                         </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:25–13:55</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">大西 里奈 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（大阪大学(非)）</p>
+                        <div class="abstract-tooltip">
+                            <div class="tooltip-label">要旨</div>
+                            <p class="tooltip-text">　現行学習指導要領の問題点を列挙し、改訂すべき課題を提示する。エリート養成のためのグローバル人材育成策を背景に、国は英語の語彙・指導内容を一気に難化させた。その結果、英語がわからない・嫌いな児童生徒が増え、学力の二極化が進んでいる。民間検定試験による到達目標管理と序列化、教育の市場化も危険だ。すべての子どもに外国語を学ぶ喜びをもたらすために、語彙と指導項目の精選、仲間同士が助け合う協同学習、AIにできない異文化コミュニケーションの重要性などを提案する。</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
+                    <!-- 大西氏 -->
+                    <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
+                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:25–13:55</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2"><span class="abstract-trigger">大西 里奈 氏</span></h3>
+                            <p class="text-gray-300 pl-[1em]">（大阪大学(非)）</p>
+                        </div>
+                        <div class="abstract-tooltip">
+                            <div class="tooltip-label">要旨</div>
+                            <p class="tooltip-text">　現行学習指導要領で掲げられた「主体的・対話的で深い学び」は、なぜ現場で十分に具現化していないのか——。高校教諭としての経験と、授業改善コンサルティングを通じて得た学校現場の知見をもとに、その要因を明らかにしたい。過密なカリキュラムや評価の過剰化、学びに結実しないICT使用といった制度的矛盾を指摘しつつ、協同学習の効果を実例とともに示す。さらに、生成AI時代において「探究」が単なる検索作業と丸写しに陥る問題を克服すべく、次期学習指導要領での協同的学びの「実装」に向け、深い学びのあり方を提案する。</p>
+                        </div>
+                    </div>
+
+                    <!-- 上野氏 -->
+                    <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:55–14:25</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">上野 舞斗 氏</h3>
+                            <h3 class="text-xl font-bold mb-2"><span class="abstract-trigger">上野 舞斗 氏</span></h3>
                             <p class="text-gray-300 pl-[1em]">（四天王寺大学）</p>
+                        </div>
+                        <div class="abstract-tooltip">
+                            <div class="tooltip-label">要旨</div>
+                            <p class="tooltip-text">　なぜ外国語を学び、教えるのか。この問いは、平泉・渡辺論争に代表されるように、繰り返し問われてきた。そして今日、生成AIの急速な発展が再び外国語教育にこの問いを突きつけている。次期学習指導要領はこの問いにどのように答えようとしているのだろうか。中教審初等中等教育分科会の外国語ワーキンググループにおける議論を概観したうえで、特に生成AI利活用のあり方と「母語とは何か」という問題を取り上げ、外国語を学び、教えることの意味を改めて考えたい。</p>
                         </div>
                     </div>
 
@@ -239,27 +361,42 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
+                    <!-- 大津氏 -->
+                    <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:40–14:55</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">大津 由紀雄 氏</h3>
+                            <h3 class="text-xl font-bold mb-2"><span class="abstract-trigger">大津 由紀雄 氏</span></h3>
                             <p class="text-gray-300 pl-[1em]">（慶應義塾大学名誉教授）</p>
                         </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
-                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:55–15:10</div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">斎藤 兆史 氏</h3>
-                            <p class="text-gray-300 pl-[1em]">（東京大学名誉教授）</p>
+                        <div class="abstract-tooltip">
+                            <div class="tooltip-label">要旨</div>
+                            <p class="tooltip-text">　わたくしはこれまで、外国語教育としての英語教育においては、母語の力をより積極的に活用すべきであると繰り返し主張してきた。具体的には、直感が利く母語とその運用に関する「気づき」を、外国語である英語の知識形成および運用能力の育成に生かすべきであるという考えである。とりわけ、ことばへの気づきの発達が著しい小学校期・中学校期においては、この考えの重要性はいっそう高まる。幸いにも、こうした年来の主張は、現行の学習指導要領の随所に反映されている。今回の改訂に際しては、この点が後退することのないよう、そして、さらに発展していくよう改訂作業の動向を注視する必要がある。今回のトークではこうした点について整理するとともに、時間の許す限りで具体的な例を示したい。</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
+                    <!-- 斎藤氏 -->
+                    <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
+                        <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:55–15:10</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2"><span class="abstract-trigger">斎藤 兆史 氏</span></h3>
+                            <p class="text-gray-300 pl-[1em]">（東京大学名誉教授）</p>
+                        </div>
+                        <div class="abstract-tooltip">
+                            <div class="tooltip-label">要旨</div>
+                            <p class="tooltip-text">　外国語（実質的に英語）の学習指導要領と言いながら、これまで肝心の英語そのものに対する理解が必ずしも十分でない部分があったように思われる。たとえば、中学・高校の英語の授業は「英語で行うことを基本とする」といっても、その「英語」とは、どのレベルのどのような英語なのか。また、昨今の英語教育論を見ても、生徒・教員の英語力が実質的に議論されず、授業でどのような活動をさせるべきかといった小手先の方法論が目立つ。拙話では、英語行政の方針においても、現場の教育実践においても、しっかりと教育内容たる英語そのものを見据えることが重要であることを主張したい。</p>
+                        </div>
+                    </div>
+
+                    <!-- 鳥飼氏 -->
+                    <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">15:10–15:25</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">鳥飼 玖美子 氏</h3>
+                            <h3 class="text-xl font-bold mb-2"><span class="abstract-trigger">鳥飼 玖美子 氏</span></h3>
                             <p class="text-gray-300 pl-[1em]">（立教大学名誉教授）</p>
+                        </div>
+                        <div class="abstract-tooltip">
+                            <div class="tooltip-label">要旨</div>
+                            <p class="tooltip-text">　現行の学習指導要領で気になる点は多々あるが、異文化コミュニケーションの視点からは、「コミュニケーション」と「異文化理解」が極めて単純化され「英会話」と同一視されている点を改訂して欲しい、と考えている。<br>　幸か不幸か次期学習指導要領では、生成AIと向き合わざるをえないので、人間のコミュニケーションがAIとどこがどう違うのかを考えることで人間の言語使用の本質を見極めることができる。発表では具体例を挙げながら説明し、改訂学習指導要領で外国語コミュニケーションについての理解が深まることを期待したい。</p>
                         </div>
                     </div>
 
@@ -373,12 +510,12 @@
                     後援｜一般社団法人ことばの教育
                 </p>
                 <p class="text-sm opacity-80">事務局：「次期学習指導要領をどうする!?」実行委員会内</p>
-                <p class="text-sm mt-4 opacity-80 hover:opacity-100 transition-opacity">お問い合わせ: <a href="/cdn-cgi/l/email-protection#6a0e051f191f181f445c0403042a0d070b030644090507" class="underline">Email:<span class="__cf_email__" data-cfemail="87e3e8f2f4f2f5f2a9b1e9eee9c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span></a></p>
+                <p class="text-sm mt-4 opacity-80 hover:opacity-100 transition-opacity">お問い合わせ: <a href="mailto:dousuru.6nin@gmail.com" class="underline">dousuru.6nin@gmail.com</a></p>
             </div>
         </div>
     </aside>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         const menuBtn = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -395,4 +532,14 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.space-y-4 > div').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
