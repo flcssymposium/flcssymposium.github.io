@@ -73,15 +73,11 @@
             background-repeat: no-repeat;
         }
 
-        /* ============================================
-           ホバーツールチップ（要旨ボックス）
-           ============================================ */
         .has-abstract {
             position: relative;
             cursor: default;
         }
 
-        /* 名前に下線ヒントを追加 */
         .has-abstract .abstract-trigger {
             border-bottom: 1.5px dashed rgba(212, 175, 55, 0.6);
             padding-bottom: 1px;
@@ -91,7 +87,6 @@
             border-bottom-color: #D4AF37;
         }
 
-        /* ツールチップ本体（右側に表示されるよう変更） */
         .abstract-tooltip {
             position: absolute;
             left: 350px;
@@ -108,8 +103,6 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.5);
             padding: 22px 24px;
             z-index: 200;
-
-            /* 非表示状態 */
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -117,7 +110,6 @@
             transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
         }
 
-        /* 左向き三角（吹き出しの尻尾） */
         .abstract-tooltip::after {
             content: '';
             position: absolute;
@@ -132,7 +124,6 @@
             transform: translateY(-50%) rotate(45deg);
         }
 
-        /* ホバー時に表示 */
         .has-abstract:hover .abstract-tooltip {
             opacity: 1;
             visibility: visible;
@@ -140,7 +131,6 @@
             transform: translateY(-50%) translateX(0);
         }
 
-        /* ツールチップ内ラベル */
         .tooltip-label {
             display: inline-block;
             font-size: 0.7rem;
@@ -153,7 +143,6 @@
             margin-bottom: 12px;
         }
 
-        /* ツールチップ内テキスト */
         .tooltip-text {
             font-size: 0.86rem;
             line-height: 1.85;
@@ -161,9 +150,6 @@
             text-align: justify;
         }
 
-        /* ============================================
-           モバイル調整: スマホでは名前の下に常時展開する
-           ============================================ */
         @media (max-width: 767px) {
             .abstract-tooltip {
                 position: relative !important;
@@ -173,18 +159,16 @@
                 width: 100% !important;
                 max-width: 100% !important;
                 max-height: none !important;
-                opacity: 1 !important; /* スワイプしてきたときに最初から表示させておく */
+                opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
                 margin-top: 20px;
                 padding: 16px 20px;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
             }
-            /* ホバー時の挙動を無効化 */
             .has-abstract:hover .abstract-tooltip {
                 transform: none !important;
             }
-            /* 尻尾を上向きに変更（名前の下に吹き出しが出るように） */
             .abstract-tooltip::after {
                 display: block !important;
                 top: -8px !important;
@@ -195,7 +179,6 @@
                 border-bottom: none !important;
                 transform: rotate(45deg) !important;
             }
-            /* 常時表示なので、クリック誘導の下線を消す */
             .has-abstract .abstract-trigger {
                 border-bottom: none !important;
             }
@@ -215,8 +198,8 @@
                         次期学習指導要領をどうする!?
                     </span>
                     <span class="font-reggae text-xs md:text-sm text-accent-gold leading-tight tracking-tight -mt-1 opacity-90">
-    <span class="inline-block -scale-x-100">---</span> 外国語教育の視点から ---
-</span>
+                        <span class="inline-block -scale-x-100">---</span> 外国語教育の視点から ---
+                    </span>
                 </div>
                 
                 <div class="hidden md:flex space-x-8 items-center">
@@ -259,12 +242,12 @@
                         次期学習指導要領を<br class="hidden md:block">どうする!?
                     </h1>
                     <p class="text-cream text-2xl md:text-3xl font-normal tracking-wider font-reggae mt-4 title-glow">
-    <span class="inline-block -scale-x-100 opacity-80">---</span> 外国語教育の視点から <span class="opacity-80">---</span>
-</p>
+                        <span class="inline-block -scale-x-100 opacity-80">---</span> 外国語教育の視点から <span class="opacity-80">---</span>
+                    </p>
                 </div>
                 <div class="w-full max-w-4xl mx-auto mb-10 px-0 md:px-4 animate-fade-in-up" style="animation-delay: 0.1s;">
-    <img src="https://flcssymposium.github.io/photos.png" alt="登壇者やイメージ写真" class="w-full h-auto drop-shadow-2xl mx-auto">
-</div>
+                    <img src="https://flcssymposium.github.io/photos.png" alt="登壇者やイメージ写真" class="w-full h-auto drop-shadow-2xl mx-auto">
+                </div>
                 <div class="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
                     <div class="glass-card px-8 py-4 rounded-2xl text-left border-l-4 border-accent-gold shadow-2xl">
                         <p class="text-navy-900 text-xs font-bold uppercase tracking-wider mb-1">日時</p>
@@ -301,7 +284,6 @@
                     </div>
                     <p class="font-serif text-lg leading-relaxed text-gray-700 space-y-6 mb-8">
                         　学習指導要領の改訂作業が2026年度末の告示に向けて進行している。現行の学習指導要領のもとで、外国語（英語）教育は、小学校英語の早期化・教科化による英語嫌いの増加と英語力格差の早期顕在化、中学校で学ぶ英単語の大幅増と教科書内容の難化による学力・意欲の低下など、多くの問題に直面している。また、AIの活用といった新たな問題にも対応を迫られている。
- 
                     </p>
                     <p class="font-serif text-lg leading-relaxed text-gray-700 mb-8">
                         　私たちは英語教育政策の危険性に警鐘を鳴らし続けてきた。学習指導要領の改訂作業が大詰めを迎える今日、本シンポジウムでは、現行指導要領の問題点を整理したうえで、改訂にあたって考慮すべき論点を提示し、建設的な提案を行いたい。そのために、これまで活動をともにしてきた4人に加え、若い世代の2人も登壇し、多様な角度から議論を展開する。 
@@ -312,10 +294,15 @@
                 </div>
             </div>
         </section>
- 
+
         <section id="program" class="py-24 bg-navy-900 text-white overflow-hidden relative">
             <div class="max-w-5xl mx-auto px-4 relative z-10">
-                <h2 class="section-title text-3xl font-black mb-16">プログラム</h2>
+                <div class="mb-16">
+                    <h2 class="section-title text-3xl font-black">プログラム</h2>
+                    <p class="mt-4 text-sm opacity-80 hidden md:block">
+                        ※PCでご覧の方へ：各登壇者の部分にカーソルをあてていただくと、その講演概要を読むことができます。
+                    </p>
+                </div>
                 
                 <div class="space-y-4">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5">
@@ -324,7 +311,7 @@
                             <h3 class="text-xl font-bold">開会</h3>
                         </div>
                     </div>
- 
+
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:05–13:25</div>
                         <div class="flex-1">
@@ -336,7 +323,7 @@
                             </div>
                         </div>
                     </div>
- 
+
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:25–13:55</div>
                         <div class="flex-1">
@@ -348,7 +335,7 @@
                             </div>
                         </div>
                     </div>
- 
+
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">13:55–14:25</div>
                         <div class="flex-1">
@@ -360,14 +347,14 @@
                             </div>
                         </div>
                     </div>
- 
+
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:25–14:40</div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold">休憩</h3>
                         </div>
                     </div>
- 
+
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:40–14:55</div>
                         <div class="flex-1">
@@ -379,7 +366,7 @@
                             </div>
                         </div>
                     </div>
- 
+
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">14:55–15:10</div>
                         <div class="flex-1">
@@ -391,7 +378,7 @@
                             </div>
                         </div>
                     </div>
- 
+
                     <div class="has-abstract flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">15:10–15:25</div>
                         <div class="flex-1">
@@ -403,14 +390,14 @@
                             </div>
                         </div>
                     </div>
- 
+
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5 bg-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">15:25–16:25</div>
                         <div class="flex-1 pt-1">
                             <h3 class="text-xl font-bold">全体討議</h3>
                         </div>
                     </div>
- 
+
                     <div class="flex flex-col md:flex-row gap-4 md:gap-12 p-6 rounded-3xl transition-colors hover:bg-white/5 border border-white/5">
                         <div class="w-32 text-accent-sky font-bold text-xl pt-1">16:25–16:30</div>
                         <div class="flex-1">
@@ -421,7 +408,7 @@
             </div>
             <div class="absolute -bottom-24 -right-24 w-64 h-64 border-2 border-white/10 rounded-full"></div>
         </section>
- 
+
         <section id="register" class="py-24 bg-gray-50 relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-4 relative z-10">
                 <div class="bg-white rounded-[40px] p-8 md:p-16 shadow-xl text-center transform hover:-translate-y-2 transition-transform duration-500 border border-gray-100">
@@ -494,7 +481,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2 w-full h-[450px] bg-gray-200 rounded-[40px] shadow-2xl overflow-hidden relative border-8 border-white">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.727233389806!2d139.7660363757383!3d35.6837177725864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfec5da0093%3A0x572db3d6516f0936!2z6Zai6KW_5aSn5a2mIOadseS6rOOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1773719724897!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8280303808788!2d139.7681!3d35.6823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf0a0c20a67%3A0x6a2c2e0b5220674!2z44K144OU44Ki44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1711234567890!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
                     </div>
                 </div>
             </div>
@@ -502,12 +489,11 @@
 
     </main>
 
-    <aside class="bg-navy-900 text-white py-20 px-4">
+    <footer class="bg-navy-900 text-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-left">
                 <h4 class="text-white font-bold mb-6 flex items-center gap-2">
                     <span class="w-8 h-1 bg-accent-gold"></span>
-                    
                 </h4>
                 <p class="text-lg text-white font-medium mb-6">
                     主催｜JSPS科研費 挑戦的研究（萌芽）24K21365　代表：大津由紀雄<br>
@@ -517,7 +503,7 @@
                 <p class="text-sm mt-4 opacity-80 hover:opacity-100 transition-opacity">お問い合わせ: <a href="mailto:dousuru.6nin@gmail.com" class="underline">dousuru.6nin@gmail.com</a></p>
             </div>
         </div>
-    </aside>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById('mobile-menu-button');
