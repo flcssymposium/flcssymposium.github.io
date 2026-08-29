@@ -150,6 +150,12 @@
             text-align: justify;
         }
 
+        /* 開催終了バナー（ヘッダー直下・固定） */
+        .closed-ribbon {
+            background: linear-gradient(90deg, #D4AF37 0%, #e6c765 50%, #D4AF37 100%);
+            color: #002060;
+        }
+
         @media (max-width: 767px) {
             .abstract-tooltip {
                 position: relative !important;
@@ -206,8 +212,8 @@
                     <a href="#intro" class="text-base font-bold hover:text-navy-800 transition-colors">開催趣旨</a>
                     <a href="#program" class="text-base font-bold hover:text-navy-800 transition-colors">プログラム</a>
                     <a href="#access" class="text-base font-bold hover:text-navy-800 transition-colors">アクセス</a>
-                    <a href="#register" class="bg-navy-900 text-white px-6 py-2.5 rounded-full text-base font-black hover:bg-navy-800 transition-all shadow-lg hover:shadow-navy-900/20 active:scale-95">
-                        参加申し込み
+                    <a href="#notice" class="bg-navy-900 text-white px-6 py-2.5 rounded-full text-base font-black hover:bg-navy-800 transition-all shadow-lg hover:shadow-navy-900/20 active:scale-95">
+                        お知らせ
                     </a>
                 </div>
 
@@ -220,17 +226,22 @@
                 </div>
             </div>
         </nav>
+
+        <a href="#notice" class="closed-ribbon block text-center py-2 px-4 text-xs md:text-sm font-black tracking-wide hover:brightness-105 transition-all">
+            本シンポジウムは終了しました。多数のご参加をありがとうございました。
+            <span class="hidden sm:inline font-bold">／ 配付資料のダウンロードは9月7日(月)まで</span>
+        </a>
         
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-2 shadow-xl text-center">
             <a href="#intro" class="block px-3 py-2 text-lg font-medium text-gray-700">開催趣旨</a>
             <a href="#program" class="block px-3 py-2 text-lg font-medium text-gray-700">プログラム</a>
             <a href="#access" class="block px-3 py-2 text-lg font-medium text-gray-700">アクセス</a>
-            <a href="#register" class="block px-3 py-4 text-center font-bold text-white bg-navy-900 rounded-xl mx-4 mt-2">参加申し込み</a>
+            <a href="#notice" class="block px-3 py-4 text-center font-bold text-white bg-navy-900 rounded-xl mx-4 mt-2">お知らせ</a>
         </div>
     </header>
 
     <main>
-        <section class="relative min-h-screen flex items-start justify-center pt-32 md:pt-40 pb-20 overflow-hidden">
+        <section class="relative min-h-screen flex items-start justify-center pt-40 md:pt-48 pb-20 overflow-hidden">
             <div class="absolute inset-0 hero-background z-0"></div>
             
             <div class="relative z-10 w-full max-w-5xl mx-auto px-4 text-center">
@@ -245,6 +256,20 @@
                         <span class="inline-block -scale-x-100 opacity-80">---</span> 外国語教育の視点から <span class="opacity-80">---</span>
                     </p>
                 </div>
+
+                <div class="max-w-3xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.05s;">
+                    <div class="glass-card rounded-3xl px-6 py-8 md:px-12 md:py-10 shadow-2xl border-t-4 border-accent-gold">
+                        <p class="inline-block bg-navy-900 text-white text-xs font-black tracking-[0.2em] px-4 py-1.5 rounded-full mb-5">開催終了</p>
+                        <p class="text-navy-900 text-xl md:text-2xl font-black mb-4 leading-snug">
+                            本シンポジウムは終了しました。<br class="md:hidden">多数のご参加をありがとうございました。
+                        </p>
+                        <p class="text-navy-800 text-sm md:text-base leading-relaxed">
+                            2026年8月8日(土)、会場・オンラインあわせて多くの皆さまにご参加いただきました。<br class="hidden md:block">
+                            参加登録者の皆さまにメールでお送りした配付資料のダウンロードは、<span class="font-black">2026年9月7日(月)</span>をもって終了します。
+                        </p>
+                    </div>
+                </div>
+
                 <div class="w-full max-w-4xl mx-auto mb-10 px-0 md:px-4 animate-fade-in-up" style="animation-delay: 0.1s;">
                     <img src="https://flcssymposium.github.io/photos.png" alt="登壇者やイメージ写真" class="w-full h-auto drop-shadow-2xl mx-auto">
                 </div>
@@ -262,8 +287,8 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <a href="#register" class="w-full sm:w-auto px-10 py-5 bg-white text-navy-900 font-black rounded-full hover:scale-105 transition-all shadow-xl text-lg">
-                        参加申し込み (無料)
+                    <a href="#notice" class="w-full sm:w-auto px-10 py-5 bg-white text-navy-900 font-black rounded-full hover:scale-105 transition-all shadow-xl text-lg">
+                        お知らせを見る
                     </a>
                     <a href="#program" class="w-full sm:w-auto px-10 py-5 bg-navy-900/40 backdrop-blur border border-white/20 text-white font-bold rounded-full hover:bg-navy-900/60 transition-all text-lg">
                         プログラムを見る
@@ -409,45 +434,36 @@
             <div class="absolute -bottom-24 -right-24 w-64 h-64 border-2 border-white/10 rounded-full"></div>
         </section>
 
-        <section id="register" class="py-24 bg-gray-50 relative overflow-hidden">
+        <section id="notice" class="py-24 bg-gray-50 relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-4 relative z-10">
-                <div class="bg-white rounded-[40px] p-8 md:p-16 shadow-xl text-center transform hover:-translate-y-2 transition-transform duration-500 border border-gray-100">
-                    <h2 class="text-3xl md:text-5xl font-black text-navy-900 mb-6">参加申し込み</h2>
-                    <p class="text-gray-600 mb-10 max-w-lg mx-auto leading-relaxed">
-                        本シンポジウムは事前登録制です。対面・オンラインいずれの方法で参加を希望される方も下掲のフォームよりお申し込みください。
+                <div class="bg-white rounded-[40px] p-8 md:p-16 shadow-xl text-center border border-gray-100">
+                    <p class="inline-block bg-navy-900 text-white text-xs font-black tracking-[0.2em] px-4 py-1.5 rounded-full mb-6">開催終了・御礼</p>
+                    <h2 class="text-3xl md:text-5xl font-black text-navy-900 mb-6">お知らせ</h2>
+                    <p class="text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed text-left">
+                        　本シンポジウムは2026年8月8日(土)、盛況のうちに終了いたしました。会場・オンラインあわせて多数のご参加をいただき、また活発なご議論をお寄せいただき、誠にありがとうございました。<br>
+                        　当日の配付資料は、参加登録者の皆さまにメールでお送りしています。ダウンロードがお済みでない方は、下記の期限までにお願いいたします。
                     </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                        <div class="p-6 border border-gray-100 rounded-3xl bg-gray-50">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">参加費</p>
-                            <p class="text-2xl font-black text-navy-900">無料</p>
-                            <p class="text-[10px] text-gray-500 mt-2 font-bold">※要事前申し込み</p>
-                        </div>
-                        <div class="p-6 border border-gray-100 rounded-3xl bg-gray-50">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">定員</p>
-                            <p class="text-2xl font-black text-navy-900">対面90名</p>
-                            <p class="text-[10px] text-gray-500 mt-2 font-bold">オンライン280名</p>
-                        </div>
-                        <div class="p-6 border border-gray-100 rounded-3xl bg-gray-50">
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">締め切り</p>
-                            <p class="text-2xl font-black text-navy-900">8月6日(木) 17:00</p>
-                            <p class="text-[10px] text-gray-500 mt-2 font-bold">※定員に達し次第締め切り</p>
-                        </div>
-                    </div>
 
-                    <a href="https://forms.gle/7kksxbhJhoJjmbMC9" target="_blank" class="inline-block w-full md:w-auto px-16 py-6 bg-navy-900 text-white rounded-full font-black text-xl shadow-2xl hover:bg-navy-800 transition-all hover:scale-105 active:scale-95">
-                        申し込みフォームを開く
-                    </a>
+                    <div class="rounded-3xl border-2 border-accent-gold/50 bg-accent-gold/5 p-6 md:p-8">
+                        <p class="text-[11px] font-black text-accent-gold uppercase tracking-[0.2em] mb-3">重要なお知らせ</p>
+                        <p class="text-navy-900 font-black text-xl md:text-2xl leading-snug mb-3">
+                            配付資料のダウンロードは<br class="md:hidden">2026年9月7日(月)をもって終了します
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            9月8日(火)以降は、メールでお送りしたリンクからダウンロードできなくなります。<br class="hidden md:block">
+                            資料は参加登録者の皆さまにのみお送りしており、本ウェブサイトでの配布は行っておりません。
+                        </p>
+                    </div>
                     
-                    <div class="mt-8 flex justify-center gap-6">
-                        <a href="https://drive.google.com/file/d/1Rwp5HHDvln5UdTGRkCR77l8Imgl0Hxoj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-gray-500 hover:text-navy-900 transition-colors">
+                    <div class="mt-10 pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-center gap-6">
+                        <a href="https://drive.google.com/file/d/1Rwp5HHDvln5UdTGRkCR77l8Imgl0Hxoj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-navy-900 transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/></svg>
                             フライヤー(PDF)
                         </a>
-                        <a href="https://drive.google.com/file/d/1nlMJsR52vxWxj1iQI_nDWdjE1czm20pe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-gray-500 hover:text-navy-900 transition-colors">
+                        <a href="https://drive.google.com/file/d/1nlMJsR52vxWxj1iQI_nDWdjE1czm20pe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-navy-900 transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/></svg>
                             リーフレット(PDF)
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -462,7 +478,7 @@
                             <div>
                                 <h4 class="font-bold text-lg text-navy-800 mb-2">関西大学東京センター A・B教室</h4>
                                 <p class="text-gray-600">東京都千代田区丸の内1-7-12 サピアタワー9階</p>
-                                <p class="text-sm text-gray-500 mt-2 font-bold">※サピアタワー3階のオフィスロビー総合受付で入館手続きを行ったうえで、9階にお上がりください。</p>
+                                <p class="text-sm text-gray-500 mt-2 font-bold">※本シンポジウムは終了しました。以下は開催時の会場情報です。</p>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-gray-50 p-4 rounded-xl">
@@ -476,7 +492,7 @@
                             </div>
                             <div class="p-4 border border-accent-gold/30 bg-accent-gold/5 rounded-xl">
                                 <p class="text-xs font-bold text-accent-gold uppercase mb-1">Online participation</p>
-                                <p class="text-sm text-gray-700">オンライン参加の方には、開催前日に入室情報をメールにて送付いたします。</p>
+                                <p class="text-sm text-gray-700">オンライン参加の皆さまには、開催前日に入室情報をメールにてお送りしました。ご参加ありがとうございました。</p>
                             </div>
                         </div>
                     </div>
